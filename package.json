@@ -1,0 +1,31 @@
+{
+  "name": "popin",
+  "version": "1.0.0",
+  "description": "what's pop'n?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindaeverswick/PopIn.git"
+  },
+  "keywords": [
+    "express",
+    "postreSQL",
+    "react",
+    "social",
+    "app"
+  ],
+  "author": "Pink Fairy Armadillos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lindaeverswick/PopIn/issues"
+  },
+  "homepage": "https://github.com/lindaeverswick/PopIn#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
