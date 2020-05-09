@@ -5,8 +5,8 @@
     time: string
     description: string
     userId: number
-    geoLocation:
-    address:
+    geoLocation: object
+    address: string
 }
 
 # API Routes
