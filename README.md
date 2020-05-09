@@ -1,3 +1,4 @@
+<!-- Here is the schema for our Events and Users-->
 # PopIn
 # Event Object
 {
@@ -7,6 +8,14 @@
     userId: number
     geoLocation: object
     address: string
+}
+
+# Users Object 
+<!-- Instagram API https://www.instagram.com/developer/endpoints/users/ -->
+{
+    username: string
+    full name: string
+    profile-picture: string
 }
 
 # API Routes
