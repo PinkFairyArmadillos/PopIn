@@ -12,6 +12,11 @@ app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../
 
 app.use('/api', apiRouter);
 
+app.use('*', (req, res) => {
+  console.log(res);
+  res.status(200).json({});
+})
+
 app.use((req, res) => res.status(200).sendFile(path.resolve(__dirname, '../mock/index.html')));
 
 
