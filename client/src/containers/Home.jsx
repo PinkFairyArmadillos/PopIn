@@ -4,6 +4,7 @@ import Button from "../components/Button";
 export default class Home extends Component {
   static handleOauth() {
     console.log("pressed handleOuath");
+    window.location.href = 'auth/twitter/login';
   }
 
   constructor(props) {
@@ -14,6 +15,6 @@ export default class Home extends Component {
   }
 
   render() {
-    return <Button title="Log in with Instagram" onClick={Home.handleOauth} />;
+    return <Button title="Log in with Twitter" onClick={Home.handleOauth} />;
   }
 }

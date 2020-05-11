@@ -31,10 +31,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'client/public'),
     publicPath: '/',
-    // publicPath: "/build/",
-    // proxy: {
-    //   //express server
-    //   "/api": "http://localhost:3000",
-    // },
+    proxy: {
+      '/': 'http://localhost:3000',
+    },
   },
 };
