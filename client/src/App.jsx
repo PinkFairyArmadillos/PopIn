@@ -6,6 +6,11 @@ import Home from './containers/Home';
 
 
 const App = () => { 
+    // this tutorial for react routers: https://reacttraining.com/react-router/web/guides/quick-start
+    /* 
+        load react Home component when web path is /home 
+        load react Login component when web patb is /login
+    */
     return(
     <Router>
         <Switch>

@@ -36,6 +36,6 @@ router.get('/twitter/login',
 
 router.get('/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/' }),
-  (req, res) => res.redirect('/home'));
+  (req, res) => res.redirect('http://localhost:8080/home'));
 
 module.exports = router;

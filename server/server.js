@@ -8,13 +8,13 @@ const authRouter = require('./routes/auth.js');
 const PORT = 3000;
 
 app.use(express.json());
-
-app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
+app.use(express.static(path.resolve(__dirname, '../build/')));
 
 app.use('/api', apiRouter);
 
 app.use('/auth', authRouter);
 
-app.get('/home', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
-
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
+app.get('/home', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
