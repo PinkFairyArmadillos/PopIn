@@ -68,7 +68,7 @@ router.get('/twitter/callback',
       .catch(err => {
         console.log('An error has occurred: ', err);
       })
-    return res.redirect('/home');
+    return res.redirect('http://localhost:8080/home');
   },
 );
 // res.cookie('rememberme', '1', { expires: new Date(Date.now() + 900000), httpOnly: true })
