@@ -10,7 +10,7 @@ render () {
     return (
     
             <form onSubmit={this.handleSubmit}>
-            <br/>e
+            <br/>
             <input type="text" placeholder="Title"/>
             <br/>
 
