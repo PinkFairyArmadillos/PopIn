@@ -55,7 +55,7 @@ router.get('/twitter/callback',
     //query the database for the username
     const queryIfExist = 'SELECT * FROM users WHERE users.username = $1';
     const values = [userInfo.username];
-    
+
     db.query(queryIfExist, values)
       .then(data => {
         //if database does not have username then create a new entry in the database for this user
