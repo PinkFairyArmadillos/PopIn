@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import GoogleMap from './Map';
 
 export default class Home extends Component {
-  static handleOauth() {
-    console.log("pressed handleOuath");
-    window.location.href = 'auth/twitter/login';
-  }
-
   constructor(props) {
     super(props);
     this.state = {};
-    console.log(this);
-    // this.handleOauth = this.handleOauth.bind(this);
   }
-
+  
   render() {
     return (<>
-      <Button title="Log in with Twitter" onClick={Home.handleOauth} />;
+      <GoogleMap />
+      <div>
+            <form>
+                    <br/>
+                    <input type="text" placeholder="Title"/>
+                    <br/>
+
+                    <input type="text" placeholder="Time"/>
+                    <br/>
+
+                    <input type="text" placeholder="Description"/>
+                    <br/>
+
+                    {/* Since it's hidden, you don't need line break for them */}
+                    <input hidden={true} type="text" placeholder="GeoLocation"/>
+                    <input hidden={true} type="text" placeholder="UserId"/>
+
+                    <input type="text" placeholder="Address"/>
+                    <br/>
+
+                    <input type="submit" placeholder="Submit"/>
+            </form>
+      </div>
     </>)
   }
 }
