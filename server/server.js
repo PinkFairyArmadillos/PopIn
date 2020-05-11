@@ -15,6 +15,6 @@ app.use('/api', apiRouter);
 
 app.use('/auth', authRouter);
 
-app.get('/authSuccess', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../mock/index.html')));
+app.get('/home', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
