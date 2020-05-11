@@ -6,12 +6,12 @@ const router = express.Router();
 
 router.get('/',
   eventsController.getEvents,
-  (req, res) => res.status(200).json(res.locals.events)
-)
+  (req, res) => res.status(200).json(res.locals.events),
+);
 
 router.post('/',
   eventsController.postEvents,
-  (req, res) => res.status(200).json({})
-)
+  (req, res) => res.status(200).json({}),
+);
 
 module.exports = router;

@@ -1,4 +1,6 @@
 <!-- Here is the schema for our Events and Users-->
+# Google API Key
+AIzaSyC6vH8jJpTwdaLSv4TwoGTJHqNVnP43Yic
 
 # PopIn
 
@@ -9,7 +11,7 @@ title: string
 time: string
 description: string
 userId: number
-geoLocation: object
+geoLocation: object 
 address: string
 }
 

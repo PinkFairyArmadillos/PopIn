@@ -19,6 +19,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
           },
         },
       },
@@ -31,10 +32,8 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'client/public'),
     publicPath: '/',
-    // publicPath: "/build/",
-    // proxy: {
-    //   //express server
-    //   "/api": "http://localhost:3000",
-    // },
+    proxy: {
+      '/': 'http://localhost:3000',
+    },
   },
 };
