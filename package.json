@@ -5,7 +5,9 @@
   "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "server-start": "NODE_ENV=production nodemon server/server.js",
+    "dev": "NODE_ENV=development webpack-dev-server & NODE_ENV=development nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.9.4",
     "prop-types": "^15.7.2",
+    "express": "^4.17.1",
+    "pg": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
