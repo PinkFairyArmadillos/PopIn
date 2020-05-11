@@ -3,6 +3,7 @@ import './App.css';
 import Home from './containers/Home';
 import Events from './containers/Events';
 
-const App = () => <Events />;
+const App = () => <Home />
+// <Events />
 
 export default App;

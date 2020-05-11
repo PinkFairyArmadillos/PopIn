@@ -2,6 +2,7 @@ const db = require('../models/databaseConnection');
 
 const eventsController = {};
 
+// middleware that will retrieve all entries from the database events tables
 eventsController.getEvents = (req, res, next) => {
   const queryString = 'SELECT * FROM events';
 
@@ -14,7 +15,9 @@ eventsController.getEvents = (req, res, next) => {
     .catch(err => console.log('Error occured in eventsController.getEvents middleware: ', err));
 }
 
-
+// middle where that will post a new event into the events table
+// NOTE for iterators: This middleware has been tested in Postman and it works! It has not been tested with
+// or implemented in the actual frontend form yet!
 eventsController.postEvents = (req, res, next) => {
   const queryString = `INSERT INTO events (title, time, description, geolocation, address)
    VALUES ($1, $2, $3, $4, $5)`;
