@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import Button from '../components/Button';
+import GoogleMap from './Map';
+import EventForm from './EventForm';
 
 export default class Home extends Component {
-  static handleOauth() {
-    console.log("pressed handleOuath");
-    window.location.href = 'auth/twitter/login';
-  }
-
   constructor(props) {
     super(props);
-    this.state = {};
-    console.log(this);
-    // this.handleOauth = this.handleOauth.bind(this);
+  }
+  
+  handleSubmit(event) {
+    event.persist(); // persist the event so we can look at the event properties in chrome console
+    event.preventDefault(); // stop refresh that the webbrowser does by dfault on clicking submit
   }
 
   render() {
     return (<>
-      <Button title="Log in with Twitter" onClick={Home.handleOauth} />;
+      <GoogleMap />
+      <EventForm />
     </>)
   }
 }

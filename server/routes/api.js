@@ -9,6 +9,8 @@ router.get('/',
   (req, res) => res.status(200).json(res.locals.events),
 );
 
+// router for get to /user
+
 router.post('/',
   eventsController.postEvents,
   (req, res) => res.status(200).json({}),

@@ -5,6 +5,8 @@ const pool = new Pool({
   connectionString: PG_URI,
 });
 
+// Talk to Keiran if you need access to the postgres database!
+
 module.exports = {
   query: (text, params, callback) => {
     console.log('query executed', text);

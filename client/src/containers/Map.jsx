@@ -1,33 +1,9 @@
-/* eslint-disable func-names */
-// import React, { Component } from 'react';
-// import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-
-// export class MapContainer extends Component {
-//   render() {
-//     return (
-//       <Map google={this.props.google} zoom={14}>
-
-//         <Marker onClick={this.onMarkerClick}
-//                 name={'Current location'} />
-
-//         <InfoWindow onClose={this.onInfoWindowClose}>
-//             <div>
-//               <h1>{this.state.selectedPlace.name}</h1>
-//             </div>
-//         </InfoWindow>
-//       </Map>
-//     );
-//   }
-// }
-
-// export default GoogleApiWrapper({
-//   apiKey: 'AIzaSyC6vH8jJpTwdaLSv4TwoGTJHqNVnP43Yic',
-// })(MapContainer)
-
 import React, { Component, createRef } from 'react';
-
+/* 
+  followed this tutorial for this component:
+  https://engineering.universe.com/building-a-google-map-in-react-b103b4ee97f1
+*/
 class GoogleMap extends Component {
-  // googleMapRef = react.createRef();
   constructor(props) {
     super(props);
     this.googleMapRef = createRef();
@@ -35,11 +11,14 @@ class GoogleMap extends Component {
 
   componentDidMount() {
     const googleMapScript = document.createElement('script');
+    /* might not need to do .src not sure copied and pasted from tutorial */
     googleMapScript.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vH8jJpTwdaLSv4TwoGTJHqNVnP43Yic&libraries=places';
     window.document.body.appendChild(googleMapScript);
 
     googleMapScript.addEventListener('load', () => {
+      /* when the script is loaded by the browser get the current position of geolocation */
       navigator.geolocation.getCurrentPosition((position) => {
+        /* save the latitude and longitude */
         const pos = { lat: position.coords.latitude, lng: position.coords.longitude };
         this.googleMap = this.createGoogleMap(pos);
         this.marker = this.createMarker(pos);

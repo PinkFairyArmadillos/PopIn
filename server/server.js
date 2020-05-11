@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const usersController = require('./controllers/usersController');
+
 
 const app = express();
 const apiRouter = require('./routes/api.js');
@@ -9,12 +11,14 @@ const PORT = 3000;
 
 app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
+//serve index.html file when get request is made to localhost3000/  
+app.use(express.static(path.resolve(__dirname, '../build/')));
 
 app.use('/api', apiRouter);
 
 app.use('/auth', authRouter);
 
-app.get('/authSuccess', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../mock/index.html')));
-
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
+app.get('/home', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/public/index.html')));
